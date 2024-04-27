@@ -1,10 +1,8 @@
 # neural-network-challenge-2
 # Module 19 Challenge 
 # MSU AI Bootcamp 2023 - 2024
----
-## Author
+## Author:
 - Taylor Peterson
----
 # Background
 >You are tasked with creating a neural network that HR can use to predict whether employees are likely to leave the company. Additionally, HR believes that some employees may be better suited to other departments, so you are also asked to predict the department that best fits each employee. These two columns should be predicted using a branched neural network.
 # Part 1: Preprocessing
@@ -25,7 +23,6 @@
 ## Additional Note
 #### Each step of my process to complete the starter code is detailed in the comments at the beginning of each cell
 #### I have also detailed references throughout my code that reference module activities that aided my code completion.
----
 # Part 3: Summary
 ## Questions:
 1. Is accuracy the best metric to use on this data? Why or why not?
@@ -35,7 +32,8 @@
 3. Can you name a few ways that this model might be improved?
 ## Answers:
 
-1. Accuracy may not adequately reflect the effectiveness of this model. Looking at the data I began with for my `y_df`, it is easily visible that the data from both of the columns is rather imbalanced and probably skewed. This can cause bias or mispleading/high scores during the training process, possibly leaning towards one outcome over another. I believe that I need to incorporate other metrics to use on this data, such a precision, recall, F1-score, and possibly a confusion matrix. 
+1.
+* Accuracy may not adequately reflect the effectiveness of this model. Looking at the data I began with for my `y_df`, it is easily visible that the data from both of the columns is potentially imbalanced and probably skewed. This can cause bias or mispleading/high scores during the training process, possibly leaning towards one outcome over another. I believe that I need to incorporate other metrics to use on this data, such a precision, recall, F1-score, and possibly a confusion matrix. 
 2. 
 * For the **department** output layer, `department_output`, I chose **Softmax**. This is because this column is a multi-class categorical variable. From my understanding, this is best so that exactly one class is the correct classification for each *instance*, through the probability distribution over the classes. It will ensure that the sum of potential outcomes will be 1. A similar thought process was applied when thinking about the encoding menthod that the starter code required for this column (**OneHotEncoder**). A simpler explanation would be that each value in the department column cannot be true at the same time (For example, you cannot work in both the sales AND human resources departments at the same time. They are exclusive of each other).
 * For the **attrition** output layer, `attrition_output`, I chose **Sigmoid**. This is because of the binary categorical variable (Yes or No : 1 or 0). There are only two possibilites here; if it is not 'Yes', it will be 'No', and vice versa. My first choice for use was Softmax, however even after changing it to my final choice of sigmoid, the results did not change. 
